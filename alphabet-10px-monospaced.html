@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ark Pixel - Alphabet 10px monospaced</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-latin;
+            src: url("ark-pixel-10px-monospaced-latin.woff2?r=0.12721621003411943");
+        }
+        :lang(en) {
+            font-family: Ark-Pixel-10px-monospaced-latin, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-zh_cn;
+            src: url("ark-pixel-10px-monospaced-zh_cn.woff2?r=0.12721621003411943");
+        }
+        :lang(zh-cn) {
+            font-family: Ark-Pixel-10px-monospaced-zh_cn, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-zh_hk;
+            src: url("ark-pixel-10px-monospaced-zh_hk.woff2?r=0.12721621003411943");
+        }
+        :lang(zh-hk) {
+            font-family: Ark-Pixel-10px-monospaced-zh_hk, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-zh_tw;
+            src: url("ark-pixel-10px-monospaced-zh_tw.woff2?r=0.12721621003411943");
+        }
+        :lang(zh-tw) {
+            font-family: Ark-Pixel-10px-monospaced-zh_tw, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-zh_tr;
+            src: url("ark-pixel-10px-monospaced-zh_tr.woff2?r=0.12721621003411943");
+        }
+        :lang(zh-tr) {
+            font-family: Ark-Pixel-10px-monospaced-zh_tr, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-ja;
+            src: url("ark-pixel-10px-monospaced-ja.woff2?r=0.12721621003411943");
+        }
+        :lang(ja) {
+            font-family: Ark-Pixel-10px-monospaced-ja, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-10px-monospaced-ko;
+            src: url("ark-pixel-10px-monospaced-ko.woff2?r=0.12721621003411943");
+        }
+        :lang(ko) {
+            font-family: Ark-Pixel-10px-monospaced-ko, sans-serif;
+        }
+        @font-face {
+            font-family: Ark-Pixel-12px-monospaced-latin;
+            src: url("ark-pixel-12px-monospaced-latin.woff2?r=0.12721621003411943");
+        }
+        .options-group {
+            height: 36px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: row;
+            background-color: #ffd339;
+        }
+        .option {
+            height: 100%;
+            margin-left: 24px;
+            margin-right: 24px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: #4b4b4b;
+            font-family: Ark-Pixel-12px-monospaced-latin, sans-serif;
+            font-size: 24px;
+            line-height: 36px;
+        }
+        .option input[type="radio"] {
+            display: none;
+        }
+        .option input[type="radio"] + span {
+            width: 10px;
+            height: 10px;
+            margin-left: 12px;
+            margin-right: 12px;
+            border-width: 2px;
+            border-color: #4b4b4b;
+            border-style: solid;
+        }
+        .option input[type="radio"]:checked + span {
+            background-color: #4b4b4b;
+        }
+        #content {
+            margin-top: 36px;
+            color: #4b4b4b;
+            font-size: 40px;
+            line-height: 40px;
+            word-break: break-all;
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 8%, transparent 8%), linear-gradient(180deg, transparent 96%, rgba(0, 0, 0, 0.1) 96%);
+            background-size: 20px 40px;
+        }
+    </style>
+
+    <script>
+        (function () {
+            let hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?87b0b32534fb01f816ace67eeef3ee0a";
+            let s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQSG69LJYP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-BQSG69LJYP');
+    </script>
+</head>
+<body>
+    <form class="options-group">
+        <label class="option">
+            <input id="radio-locale-en" name="locale" type="radio" onchange="onLocaleChange('en');">
+            <span></span>
+            latin
+        </label>
+        <label class="option">
+            <input id="radio-locale-zh-cn" name="locale" type="radio" onchange="onLocaleChange('zh-cn');">
+            <span></span>
+            zh-cn
+        </label>
+        <label class="option">
+            <input id="radio-locale-zh-hk" name="locale" type="radio" onchange="onLocaleChange('zh-hk');">
+            <span></span>
+            zh-hk
+        </label>
+        <label class="option">
+            <input id="radio-locale-zh-tw" name="locale" type="radio" onchange="onLocaleChange('zh-tw');">
+            <span></span>
+            zh-tw
+        </label>
+        <label class="option">
+            <input id="radio-locale-zh-tr" name="locale" type="radio" onchange="onLocaleChange('zh-tr');">
+            <span></span>
+            zh-tr
+        </label>
+        <label class="option">
+            <input id="radio-locale-ja" name="locale" type="radio" onchange="onLocaleChange('ja');">
+            <span></span>
+            ja
+        </label>
+        <label class="option">
+            <input id="radio-locale-ko" name="locale" type="radio" onchange="onLocaleChange('ko');">
+            <span></span>
+            ko
+        </label>
+    </form>
+    <div id="content">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        <br>
+        abcdefghijklmnopqrstuvwxyz
+        <br>
+        0123456789 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+        <br>
+        ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĆćĈĉĊċČčĐđĒēĔĕĖėĚěĜĝĞğĠġĨĩĪīĬĭŃńŇňŌōŎŏŔŕŨũŪūŬŭŴŵŶŷŸŹźŻżŽžƒǍǎǏǐǑǒǓǔǕǖǗǘǙǚǛǜǝǞǟǠǡǢǣǸǹǼǽȞȟȲȳ‐‑‒–—―‖‘’‚‛“”„‟†‡․‥…‧※‾⁋⁌⁍⁰ⁱ⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₔₕₖₗₘₙₚₛₜ⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅟ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ↉←↑→↓↔↕↖↗↘↙↺↻⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇚⇛⇠⇡⇢⇣⇤⇥⇦⇧⇨⇩⇪⇫⇬⇭⇮⇯⇰⇱⇲⇳⇽⇾⇿①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⓪⓫⓬⓭⓮⓯⓰⓱⓲⓳⓴⓵⓶⓷⓸⓹⓺⓻⓼⓽⓾⓿─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╌╍╎╏═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬╭╮╯╰╱╲╳╴╵╶╷╸╹╺╻╼╽╾╿▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱▲△▴▵▶▷▸▹►▻▼▽▾▿◀◁◂◃◄◅◆◇◈◉◊○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◢◣◤◥◦◧◨◩◪◫◬◭◮◯◰◱◲◳◴◵◶◷◸◹◺◻◼◽◾◿☀☁☂★☆☉☎☏☐☑☒☔☖☗☜☝☞☟☠☪☫☬☮☯☰☱☲☳☴☵☶☷☸☹☺☻☼♀♁♂♈♉♊♋♌♍♎♏♐♑♒♓♔♕♖♗♘♙♚♛♜♝♞♟♠♡♢♣♤♥♦♧♨♩♪♫♬♭♮♯⚀⚁⚂⚃⚄⚅⚊⚋⚌⚍⚎⚏⚐⚑⚓⚔⚕⚘⚙⚚⚪⚫⛆⛉⛊⛋⛓⛢⛨⛩⛪⛫⛬⛱⛲⛵⛶⛼⛽⛿✈✉❶❷❸❹❺❻❼❽❾❿➀➁➂➃➄➅➆➇➈➉➊➋➌➍➎➏➐➑➒➓　、。〃〄々〆〇〈〉《》「」『』【】〒〓〔〕〖〗〘〙〚〛〜〠〶〷〼〾〿ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゙゚゛゜ゝゞゟ゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩㄪㄫㄬㄭㄮㄯ㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩㉿㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉㊣㊤㊥㊦㊧㊨㋀㋁㋂㋃㋄㋅㋆㋇㋈㋉㋊㋋㋿㍘㍙㍚㍛㍜㍝㍞㍟㍠㍡㍢㍣㍤㍥㍦㍧㍨㍩㍪㍫㍬㍭㍮㍯㍰㍻㍼㍽㍾㏠㏡㏢㏣㏤㏥㏦㏧㏨㏩㏪㏫㏬㏭㏮㏯㏰㏱㏲㏳㏴㏵㏶㏷㏸㏹㏺㏻㏼㏽㏾一丁七丄丅丆万丈三上下丌不与丑专且丕世丗丘丙业丛东丝丟両丢丣严並丧丨个丫中丰串丳临丵为主丽举丿乂么义之乎乐乒乓乔乕乖乗乘乙乚乛九也习书买亅了予争亊事二亍于亖亗亘亚亜亞亡亢交产亨亩享京亭亮亰亲亶人亻亼亾什仁仃介从仓仝们仲件仹任企休众会伞伟伯估伸伹佃佄但佇位住体何佘余你佪侖供侣侯侱侶便俉俌俚保信俥俱個倍們候倚倡倩假偉偘停側傅傘傴像僵儿元兄兇先光克兑党入內全兩兰共关兵其具典兽冀冂内円冈冉冊册再冒冓写冚军冝冠冥冧冨凊几凰凵凶凸凹出击刀列刘则刚创到制刷刺則剣剴創剽剾劍力勇勒動勤匚匣匸区區十千卄升半卋卌卍卐卑卒卓单卖南単博卢卨卫危厂厃厄厅历厌厘厙原又叉双口古叮可史叵司合吉吊同名后吏向吕君吝吞吧吾呂呆员呙呠呵呷呻命呾和咒咛咠品哃員哥哩哺哽唔唱商啎喥喱器噩囗囚四回因囬园困囸固国圃圄圆圉國園圓土圢圣在地圼坦坰坷坾型垌垔垚垣埂埋埔基埼堂塞境士声売壳壶大天太头夷奇奈奋妑妲妳妸娌娪婷媄子孑孒孓字学宁宇宋宙定宜宝实実审宣室宰家宸容宽寓實寫尃小尖尘尙尚尝局居屇屈屉届屋屓属山岢峬峺峿嵄嵐嵒嵓工巨巫己已巳巴巵巿币市帊帛帝带帯常干平年幸广広应度座庫廿开式弓引弥弯彁彊当徛心忊怛息悑悝悟意慧我戨戯戱戲技把抲担拧挭捂捏捕捚掌搏支攴文方无日旦旧早旱旲旵旹旻昇昊昌昍明星春是昰显晋晡晤晶曲曳更曵書曹曺最月有朝木未末本朮术朿杏束来東杲杳杷林果枝柠柯标格案桌桐档梔梗梧梩棠森棵楟業楽樹橡款歌止正毎每氣氷汀汉汊沁河泍泛泞泹洹活浦浬浭浯海渏渟渡渼湹源溥滒潒炣点為烳焐無牾狚狝狞狸狼猼玉玊王珸現理生產産用甫田由甲申电画甼畀界畳當畺畾疊発登白百的皿盂盅目盲直相盾眝眞码硬碠社私称稉種稱空站竜竞竟童等筻简米籵粑粪粳粴糞素続續统绠续网置美羹者而耑肥肯脯自至與興舟芽英苴茁茞草荲莄華营萬葉血行街要見言詝語說諪謌讠计订认诃语说请象貯赤跡躾車軋軍軒軖辅辺过这迚进连迣迥迴迵迹追逈逗速造連運過郙郚郬配采里重量金鋙鍍鎂鎶钵铻镀镁長长門閂閃閆閇閈閉閊開閏閑間閙関閩门闩闪闫闬闭问闰闲间闸阿陠陸険随雨雪雫雲雷電霜霝靑青面革鞕韩韭音頁页風风首香马骨骾高鯁鯂鲠黃黄黑黒默黙齐龍鿔︐︑︒︓︔︕︖︗︘︙︰︱︲︳︴︵︶︷︸︹︺︻︼︽︾︿﹀﹁﹂﹃﹄﹅﹆﹇﹈﹉﹊﹋﹌﹍﹎﹏！＂＃＄％＆＇（）＊＋，－．／０１２３４５６７８９：；＜＝＞？＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ［＼］＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｛｜｝～｟｠｡｢｣､･ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝﾞﾟ￠￡￢￣￤￥￦￨￩￪￫￬￭￮￼�
+    </div>
+    <script>
+        let content = document.getElementById('content');
+
+        let configs = {
+            locale: 'zh-cn',
+        };
+
+        function applyConfigs() {
+            localStorage.setItem('configs:alphabet-10px-monospaced', JSON.stringify(configs));
+            content.setAttribute('lang', configs.locale);
+        }
+
+        function onLocaleChange(locale) {
+            configs.locale = locale;
+            applyConfigs();
+        }
+
+        (function () {
+            let json = localStorage.getItem('configs:alphabet-10px-monospaced');
+            if (json) {
+                Object.assign(configs, JSON.parse(json));
+            }
+            document.getElementById('radio-locale-' + configs.locale).checked = true;
+            applyConfigs();
+        })();
+    </script>
+</body>
+</html>
